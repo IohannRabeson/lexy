@@ -42,6 +42,8 @@ struct _list_sink
     {
         if constexpr (sizeof...(Args) > 0)
             sink(LEXY_FWD(args)...);
+        else
+            static_cast<void>(sink);
         return true;
     }
 
